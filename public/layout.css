@@ -1,0 +1,136 @@
+html {
+    background-color: #dadada;
+}
+
+
+body{
+    margin: 0;
+    font-family: 'Oswald';
+}
+
+body a{
+    color:black;
+    font-weight: bold;
+}
+
+.darkLayout {
+    background-color: #242424;
+    color: #dadada;
+}
+
+.textBlock {
+    max-width: 720px;
+    display: block;
+    width: 100%;
+    margin: 1vw auto;
+    text-align: center;
+}
+
+#logo{
+    max-width: 720px;
+    width:50%;
+    display: block;
+    margin: auto;
+}
+
+#introWrapper{ 
+    padding-bottom: 12px;
+}
+
+#introText{
+    padding: 1vw;
+    font-size: 4vw;
+}
+
+#about{
+    font-size: 2.5vw;
+}
+
+#about a{
+    color: white;
+    font-weight: normal;
+}
+
+.socialMedia{
+    text-align: center;
+    margin: 1vw auto;  
+}
+
+.socialMedia img{
+    margin: 0 auto 0 auto;
+    width: 10vw;
+}
+
+#email{
+    text-align: center;
+    font-size: 2vw;
+    color: #242424;
+}
+
+#footer {
+    text-align: center;
+    padding: 12px;
+}
+
+#giftText {
+    font-size: 2vw;
+}
+
+#paypalWrapper {
+    padding: 12px;
+}
+
+#copyright {
+    font-size: 1.5vw;
+}
+
+@media screen and (min-width: 1080px) {
+    #logo {
+        width:30%;
+        display: block;
+        margin: auto;
+    }
+    
+    #introText{
+        padding: 1vw;
+        font-size: 3vw;
+    }
+
+    #about{
+        font-size: 1.5vw;
+    }
+    
+    #email{
+        text-align: center;
+        font-size: 1.25vw;
+    }
+    
+    #giftText {
+        font-size: 1.25vw;
+    }
+
+    #copyright {
+        font-size: 0.75vw;
+    }
+}
+
+
+@media screen and (max-width: 720px) {
+    #introText{
+        padding: 1vw;
+        font-size: 5vw;
+    }
+    #about{
+        font-size: 3.5vw;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    #giftText {
+        display: block;
+        font-size: 2.5vw;
+    }
+    #copyright {
+        font-size: 2.5vw;
+        padding-bottom: 12px;
+    }
+}
