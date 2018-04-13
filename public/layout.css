@@ -1,136 +1,116 @@
+* {
+    margin: 0; padding: 0;
+}
+
 html {
-    background-color: #dadada;
+    background-color: #807364;
 }
 
-
-body{
-    margin: 0;
-    font-family: 'Oswald';
+body {
+    font-family: 'Averia Serif Libre', cursive;
 }
 
-body a{
-    color:black;
-    font-weight: bold;
-}
-
-.darkLayout {
-    background-color: #242424;
-    color: #dadada;
-}
-
-.textBlock {
+#header {
     max-width: 720px;
-    display: block;
-    width: 100%;
-    margin: 1vw auto;
-    text-align: center;
+    margin: 0 auto 0 auto;
+    
 }
 
-#logo{
+#companyLogo{
     max-width: 720px;
-    width:50%;
-    display: block;
-    margin: auto;
-}
-
-#introWrapper{ 
-    padding-bottom: 12px;
+    width: 100%
 }
 
 #introText{
-    padding: 1vw;
-    font-size: 4vw;
-}
-
-#about{
-    font-size: 2.5vw;
-}
-
-#about a{
-    color: white;
-    font-weight: normal;
-}
-
-.socialMedia{
     text-align: center;
-    margin: 1vw auto;  
-}
-
-.socialMedia img{
+    font-size: 19px;
+    width: 77%;
     margin: 0 auto 0 auto;
-    width: 10vw;
+    font-style: italic;
 }
 
-#email{
+.accordion {
+    max-width: 720px;
+    margin: 45px auto;
+}
+
+.accordion h1 {
+    cursor: pointer;
+}
+
+.accordion h1 {
+    padding: 15px 20px;
+    background-color: #2b2723;
+    font-size: 32px;
+    color: #fff;
     text-align: center;
-    font-size: 2vw;
-    color: #242424;
 }
 
-#footer {
+.accordion h1:hover {
+    color: #a39081;
+}
+
+.accordion h1:first-child {
+    border-radius: 0px 0px 0 0;
+}
+
+.accordion h1:last-of-type {
+    border-radius: 0 0 0px 0px;
+}
+
+.accordion h1:not(:last-of-type) {
+    border-bottom: 1px solid #807364;
+}
+
+.accordion h2 {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 15px 35px;
+    font-size: 19px;
+    background-color: #e2d5c0; 
     text-align: center;
-    padding: 12px;
 }
 
-#giftText {
-    font-size: 2vw;
+.accordion h2 a {
+    font-style: italic;
+    color: #000;
 }
 
-#paypalWrapper {
-    padding: 12px;
+.accordion h2 a:hover {
+    font-weight: 100;
+}
+
+.accordion div, .accordion p {
+    display: none;
+}
+
+.accordion .opened-for-codepen {
+    display: block;
+}
+
+.social{
+    width: 100px;
+    padding: 10px
+}
+
+#bottomBar {
+    background-color: #000;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 #copyright {
-    font-size: 1.5vw;
+    font-size: 19px;
+    text-align: center;
 }
-
-@media screen and (min-width: 1080px) {
-    #logo {
-        width:30%;
-        display: block;
-        margin: auto;
-    }
-    
-    #introText{
-        padding: 1vw;
-        font-size: 3vw;
-    }
-
-    #about{
-        font-size: 1.5vw;
-    }
-    
-    #email{
-        text-align: center;
-        font-size: 1.25vw;
-    }
-    
-    #giftText {
-        font-size: 1.25vw;
-    }
-
-    #copyright {
-        font-size: 0.75vw;
-    }
-}
-
 
 @media screen and (max-width: 720px) {
     #introText{
-        padding: 1vw;
-        font-size: 5vw;
-    }
-    #about{
-        font-size: 3.5vw;
-        padding-left: 12px;
-        padding-right: 12px;
-    }
-    #giftText {
-        display: block;
         font-size: 2.5vw;
     }
+    
     #copyright {
         font-size: 2.5vw;
-        padding-bottom: 12px;
+        text-align: center;
     }
 }
