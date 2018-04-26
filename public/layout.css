@@ -1,18 +1,32 @@
-* {
-    margin: 0; padding: 0;
+html, body{
+    margin: 0;
+    padding:0;
+    height:100%;
+    background-color: black;
 }
 
-html {
-    background-color: #807364;
+.container {
+   min-height:100%;
+   margin-bottom: -50px;
 }
-
-body {
-    font-family: 'Averia Serif Libre', cursive;
-}
-
 #header {
+   background:white;
+   padding:10px;
+}
+
+.sectionHeader {
+    background: linear-gradient(white, white, white, black);
+    height: 100vh; 
+}
+
+.sectionBody {
+    height: 100vh; 
+    color: white;
+}
+
+#intro {
     max-width: 720px;
-    margin: 0 auto 0 auto;
+    margin: auto auto auto auto;
     
 }
 
@@ -23,95 +37,82 @@ body {
 
 #introText{
     text-align: center;
-    font-size: 19px;
-    width: 77%;
+    font-size: 42px;
+    width: 90%;
     margin: 0 auto 0 auto;
     font-style: italic;
 }
 
-.accordion {
+#transition {
+    margin-top: 20%;
+    text-align: center;
+    
+}
+
+#about{
+    height: 100vh;
+}
+
+#mission {
     max-width: 720px;
-    margin: 45px auto;
-}
-
-.accordion h1 {
-    cursor: pointer;
-}
-
-.accordion h1 {
-    padding: 15px 20px;
-    background-color: #2b2723;
-    font-size: 32px;
-    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
+    padding-top: 40%;
+    
 }
 
-.accordion h1:hover {
-    color: #a39081;
+@-moz-keyframes blink {
+    66%, 100% { opacity: 1; }
+    83%       { opacity: 0; }
+} 
+
+@-webkit-keyframes blink {
+    66%, 100% { opacity: 1; }
+    83%       { opacity: 0; }
 }
 
-.accordion h1:first-child {
-    border-radius: 0px 0px 0 0;
+@-ms-keyframes blink {
+    66%, 100% { opacity: 1; }
+    83%       { opacity:0; }
+} 
+
+@keyframes blink {
+    40%, 100% { opacity: 1; }
+    80%       { opacity: 0; }
+} 
+
+.blink-image {
+    -moz-animation: blink normal 4s infinite ease-in-out;
+    -webkit-animation: blink normal 4s infinite ease-in-out;
+    -ms-animation: blink normal 4s infinite ease-in-out;
+    animation: blink normal 4s infinite ease-in-out;
 }
 
-.accordion h1:last-of-type {
-    border-radius: 0 0 0px 0px;
+#support{
+    height: 100vh;
 }
 
-.accordion h1:not(:last-of-type) {
-    border-bottom: 1px solid #807364;
+#supportMessage {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; 
+    padding-top: 40%;
 }
 
-.accordion h2 {
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 15px 35px;
-    font-size: 19px;
-    font-weight: 500;
-    background-color: #e2d5c0; 
+.footer {
+  height: 50px;
+    color:white;
     text-align: center;
+    margin-top: -50px;
 }
 
-.accordion h2 a {
-    font-style: italic;
-    color: #000;
-}
-
-.accordion h2 a:hover {
-    font-weight: 600;
-}
-
-.accordion div, .accordion p {
-    display: none;
-}
-
-.accordion .opened-for-codepen {
-    display: block;
-}
-
-.social{
-    width: 100px;
-    padding: 10px
-}
-
-#bottomBar {
-    background-color: #000;
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
-#copyright {
-    font-size: 19px;
-    text-align: center;
-}
 
 @media screen and (max-width: 720px) {
     #introText{
         font-size: 2.5vw;
     }
     
-    #copyright {
-        font-size: 2.5vw;
-        text-align: center;
-    }
+    
 }
