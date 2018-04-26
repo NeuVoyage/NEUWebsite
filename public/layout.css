@@ -2,32 +2,33 @@ html, body{
     margin: 0;
     padding:0;
     height:100%;
-    background-color: black;
+    background: url(Images/Backgrounds/hex_white.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .container {
    min-height:100%;
    margin-bottom: -50px;
 }
+
 #header {
    background:white;
    padding:10px;
 }
 
 .sectionHeader {
-    background: linear-gradient(white, white, white, black);
+    background: linear-gradient(transparent, transparent, transparent, black);
     height: 100vh; 
-}
-
-.sectionBody {
-    height: 100vh; 
-    color: white;
 }
 
 #intro {
     max-width: 720px;
     margin: auto auto auto auto;
-    
 }
 
 #companyLogo{
@@ -45,36 +46,22 @@ html, body{
 
 #transition {
     margin-top: 20%;
-    text-align: center;
-    
-}
-
-#about{
-    height: 100vh;
-}
-
-#mission {
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    padding-top: 40%;
-    
+    text-align: center;  
 }
 
 @-moz-keyframes blink {
-    66%, 100% { opacity: 1; }
-    83%       { opacity: 0; }
+    40%, 100% { opacity: 1; }
+    80%       { opacity: 0; }
 } 
 
 @-webkit-keyframes blink {
-    66%, 100% { opacity: 1; }
-    83%       { opacity: 0; }
+    40%, 100% { opacity: 1; }
+    80%       { opacity: 0; }
 }
 
 @-ms-keyframes blink {
-    66%, 100% { opacity: 1; }
-    83%       { opacity:0; }
+    40%, 100% { opacity: 1; }
+    80%       { opacity:0; }
 } 
 
 @keyframes blink {
@@ -87,6 +74,24 @@ html, body{
     -webkit-animation: blink normal 4s infinite ease-in-out;
     -ms-animation: blink normal 4s infinite ease-in-out;
     animation: blink normal 4s infinite ease-in-out;
+}
+
+.sectionBody {
+    background-color: black;
+    height: 100vh; 
+    color: white;
+}
+
+#about{
+    height: 100vh;
+}
+
+#mission {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 40%;   
 }
 
 #support{
@@ -102,17 +107,8 @@ html, body{
 }
 
 .footer {
-  height: 50px;
+    height: 50px;
     color:white;
     text-align: center;
     margin-top: -50px;
-}
-
-
-@media screen and (max-width: 720px) {
-    #introText{
-        font-size: 2.5vw;
-    }
-    
-    
 }
