@@ -10,6 +10,8 @@
         <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
 
         <link rel="stylesheet" href="layout.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     
     <body>
@@ -17,24 +19,52 @@
             <div id="header"></div>
             
             <div id="body">
-                <div class = "sectionHeader">
-                    <div id="intro">
-                        <img id="companyLogo" src="Images/Logo/logo_NEU_hex.png">
-
-                        <div id="introText">
-                            Design with story and purpose.
-                        </div>
+                <div class = "sectionIntro">
+                    <div id="introWrapper">
+                        <div id="jumpIntro"></div>
                         
-                        <div id="transition">
-                            <a href = "#about"> <img class="blink-image" src="Images/Icons/down_arrow_white.png"> </a>
+                        <div id="intro">
+                            <img id="companyLogo" src="Images/Logo/logo_NEU_blue.png">
+
+                            <div id="introText">
+                                Design with story and purpose.
+                            </div>
+
                         </div>
                     </div>
+                    
+                    <div id="transition">
+                            <a href = "#jumpMission"> <img class="blink-image" src="Images/Icons/down_arrow_white.png"> </a>
+                    </div>
+                    
                 </div>
 
-                <div class = "sectionBody">
-                    <div id= "about">
-                        <a name="about">
-                            <div id="mission">
+                <div class = "sectionMission">
+                    <div id= "missionWrapper">
+                        <div id="jumpMission"></div>
+                        
+                        <div id="mission">
+                            <p>
+                                Genetic modification has paved the way toward many things in the 23rd Century: medical breakthroughs, personal enhancements, exotic pets, and the largest hotbed of crime and underground activity the country has ever seen. Many groups seek to tame the Wild West of technology, and not all of them with good intent. Your mods make you powerful, and the rumbles of unrest have created unprecedented opportunity to change the direction of progress. This summer, the first release of our upcoming RPG system will bring the future to a tabletop near you. 
+
+                                <br> <br>
+
+                                The campaigns we'll release to accompany this system share a world with our animated series, coming toward the end of 2019. New Paris is a comedy noir rollercoaster through the complicated life of a sex icon turned detective.  Check out our info pages to learn about New Paris, the biggest city of 23rd century America, and how you can help with its construction. For up to date information on our progress, subscribe to our vlog or follow us on one of our social media pages using the links below. 
+                            </p> 
+                        </div>
+                    </div>
+                    
+                    <div id="transition">
+                        <a href = "#jumpProject"> <img class="blink-image" src="Images/Icons/down_arrow_white.png"> </a>
+                    </div>
+                </div>
+                
+                <div class = "sectionProject">
+                    <div id= "projectWrapper">
+                        <div id="jumpProject"></div>
+                        
+                        <a name="project">
+                            <div id="project">
                                 <p>
                                     Genetic modification has paved the way toward many things in the 23rd Century: medical breakthroughs, personal enhancements, exotic pets, and the largest hotbed of crime and underground activity the country has ever seen. Many groups seek to tame the Wild West of technology, and not all of them with good intent. Your mods make you powerful, and the rumbles of unrest have created unprecedented opportunity to change the direction of progress. This summer, the first release of our upcoming RPG system will bring the future to a tabletop near you. 
 
@@ -42,45 +72,89 @@
 
                                     The campaigns we'll release to accompany this system share a world with our animated series, coming toward the end of 2019. New Paris is a comedy noir rollercoaster through the complicated life of a sex icon turned detective.  Check out our info pages to learn about New Paris, the biggest city of 23rd century America, and how you can help with its construction. For up to date information on our progress, subscribe to our vlog or follow us on one of our social media pages using the links below. 
                                 </p>  
+                                
+                            
                             </div>
                         </a>
                     </div>
+                    <div id="transition">
+                        <a href = "#jumpAbout"> <img class="blink-image" src="Images/Icons/down_arrow_white.png"> </a>
+                    </div>
                 </div>
                 
-                <div class = "sectionBody"> 
-                  <div id= "support">
-                    <a name="support">
-                        <div id="supportMessage">
-                            <p>
-                                If you'd like to help bring these narratives to life, you can use the buttons below to fund us on Patreon or donate directly through PayPal. We don't really do anything else with our time, so every bit is appreciated.
+                <div class = "sectionAbout">
+                    <div id= "aboutWrapper">
+                        <div id="jumpAbout"></div>
+                        
+                        <a name="about">
+                            <div id="about">
+                                <p>
+                                    Genetic modification has paved the way toward many things in the 23rd Century: medical breakthroughs, personal enhancements, exotic pets, and the largest hotbed of crime and underground activity the country has ever seen. Many groups seek to tame the Wild West of technology, and not all of them with good intent. Your mods make you powerful, and the rumbles of unrest have created unprecedented opportunity to change the direction of progress. This summer, the first release of our upcoming RPG system will bring the future to a tabletop near you. 
 
-                                <br><br>
+                                    <br> <br>
 
-                                <a href="https://www.patreon.com/NeuVoyage" target="_blank"><img src="Images/Icons/become_a_patron_button.png"></a> 
-
-                                <br><br>
-
-                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                    <input type="hidden" name="cmd" value="_s-xclick">
-
-                                    <input type="hidden" name="hosted_button_id" value="H9H4LH774DEG8">
-
-                                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-
-                                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                                </form>
-                            </p>
-                        </div>
-                      </a>
-                  </div>
+                                    The campaigns we'll release to accompany this system share a world with our animated series, coming toward the end of 2019. New Paris is a comedy noir rollercoaster through the complicated life of a sex icon turned detective.  Check out our info pages to learn about New Paris, the biggest city of 23rd century America, and how you can help with its construction. For up to date information on our progress, subscribe to our vlog or follow us on one of our social media pages using the links below. 
+                                </p>  
+                                
+                            
+                            </div>
+                        </a>
+                    </div>
+                    <div id="transition">
+                        <a href = "#jumpSupport"> <img class="blink-image" src="Images/Icons/down_arrow_white.png"> </a>
+                    </div>
                 </div>
-            
-                <div class="push"></div>
-            </div>
-            
-            <div class="footer">
-                <div id="copyright">&copy; 2018 Narrative Exploration Unit, Incorporated.</div>
+                
+                <div class = "sectionSupport"> 
+                    <div id= "supportWrapper">
+                        <div id="jumpSupport"></div>
+                      
+                        <a name="support">
+                            <div id="support">
+                                <p>
+                                    If you'd like to help bring these narratives to life, you can use the buttons below to fund us on Patreon or donate directly through PayPal. We don't really do anything else with our time, so every bit is appreciated.
+
+                                    <br><br>
+
+                                    <a href="https://www.patreon.com/NeuVoyage" target="_blank"><img src="Images/Icons/become_a_patron_button.png"></a> 
+
+                                    <br><br>
+
+                                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                        <input type="hidden" name="cmd" value="_s-xclick">
+
+                                        <input type="hidden" name="hosted_button_id" value="H9H4LH774DEG8">
+
+                                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+
+                                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                    </form>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                
+                    <div id="backToTop">
+                        <a href = "#jumpIntro"> Back to top </a>
+                    </div>
+                
+                    <div id="footer">
+                        <p>&copy; 2018 Narrative Exploration Unit, Incorporated.</p> <p> contactus@neu.voyage</p>
+                    </div>
+                </div>
             </div>
         </div>
+    
+        <script>
+            $("a[href^='#']").click(function(e) {
+                e.preventDefault();
+
+                var position = $($(this).attr("href")).offset().top;
+
+                $("body, html").animate({
+                    scrollTop: position
+                }, 500, 'linear' );
+            });
+        </script>
     </body>
 </html>

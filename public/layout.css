@@ -2,28 +2,26 @@ html, body{
     margin: 0;
     padding:0;
     height:100%;
-    background: url(Images/Backgrounds/hex_white.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.container {
-   min-height:100%;
-   margin-bottom: -50px;
 }
 
 #header {
    background:white;
-   padding:10px;
 }
 
-.sectionHeader {
-    background: linear-gradient(transparent, transparent, transparent, black);
+.sectionIntro {
+    background: linear-gradient(transparent, transparent, transparent, #98D5EF);
     height: 100vh; 
+    position: relative;
+}
+
+#introWrapper{
+    height: 100vh;
+}
+
+#jumpIntro {
+    position: absolute;
+    width:100%;
+    top:0px;
 }
 
 #intro {
@@ -44,9 +42,165 @@ html, body{
     font-style: italic;
 }
 
-#transition {
-    margin-top: 20%;
+.sectionMission {
+    background: linear-gradient(#98D5EF,#98D5EF, #98D5EF, #98D5EF, #a3adad);
+    height: 100vh; 
+    color: white;
+    position: relative;
+}
+
+#missionWrapper{
+    height: 100vh;
+}
+
+#jumpMission {
+    position: absolute;
+    width:100%;
+    top:0px;
+}
+
+#mission {
+    position: absolute;
+    width:100%;
+    top:20%;
+    text-align: center;    
+}
+
+#mission p{
+    max-width: 720px;
+    margin: 0 auto 0 auto;
+    padding: 10px;
+    display: block; 
+}
+
+.sectionProject {
+    background: linear-gradient(#a3adad,#a3adad, #a3adad, #a3adad, #699e60);
+    height: 100vh; 
+    color: white;
+    position: relative;
+}
+
+#projectWrapper{
+    height: 100vh;
+    position: relative;
+}
+
+#jumpProject {
+    position: absolute;
+    width:100%;
+    top:0px;
+}
+
+#project {
+    position: absolute;
+    width:100%;
+    top:20%;
     text-align: center;  
+}
+
+#project p{
+    max-width: 720px;
+    margin: 0 auto 0 auto;
+    padding: 10px;
+    display: block; 
+}
+
+.sectionAbout {
+    background: linear-gradient(#699e60,#699e60, #699e60, #699e60, #69583f);
+    height: 100vh; 
+    color: white;
+    position: relative;
+}
+
+#aboutWrapper{
+    height: 100vh;
+}
+
+#jumpAbout {
+    position: absolute;
+    width:100%;
+    top:0px;
+}
+
+#about {
+    position: absolute;
+    width:100%;
+    top:20%;
+    text-align: center;   
+}
+
+#about p{
+    max-width: 720px;
+    margin: 0 auto 0 auto;
+    padding: 10px;
+    display: block; 
+}
+
+.sectionSupport {
+    background: linear-gradient(#69583f,#69583f, #69583f, #69583f, #352521);
+    height: 100vh; 
+    color: white;
+    position: relative;
+}
+
+#supportWrapper{
+    height: 100vh;
+}
+
+#jumpSupport {
+    position: absolute;
+    width:100%;
+    top:0px;
+}
+
+#support {
+    position: absolute;
+    width:100%;
+    top:20%;
+    text-align: center; 
+}
+
+#support p{
+    max-width: 720px;
+    margin: 0 auto 0 auto;
+    padding: 10px;
+    display: block; 
+}
+
+#transition {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+}
+#transition img {
+    display: block;
+    margin: 0 auto 0 auto;
+}
+
+#backToTop {
+    position: absolute;
+    bottom: 15%;
+    width: 100%;
+}
+
+#backToTop a{
+    color: white;
+    display: block;
+    text-align: center;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+#footer p {
+    color: white;
+    display: block;
+    text-align: center;
+    margin: 0px;
+    margin-bottom: 5px;
 }
 
 @-moz-keyframes blink {
@@ -74,41 +228,4 @@ html, body{
     -webkit-animation: blink normal 4s infinite ease-in-out;
     -ms-animation: blink normal 4s infinite ease-in-out;
     animation: blink normal 4s infinite ease-in-out;
-}
-
-.sectionBody {
-    background-color: black;
-    height: 100vh; 
-    color: white;
-}
-
-#about{
-    height: 100vh;
-}
-
-#mission {
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    padding-top: 40%;   
-}
-
-#support{
-    height: 100vh;
-}
-
-#supportMessage {
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center; 
-    padding-top: 40%;
-}
-
-.footer {
-    height: 50px;
-    color:white;
-    text-align: center;
-    margin-top: -50px;
 }
