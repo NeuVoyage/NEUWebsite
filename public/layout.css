@@ -44,6 +44,13 @@ html, body{
     left: 250px;
 }
 
+#soicalLogo {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 310px;
+}
+
 #twitter {
     position: absolute;
     right: 250px;
