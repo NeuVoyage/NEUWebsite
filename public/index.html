@@ -16,20 +16,20 @@
     
     <body>
         <div class="container">
-            <div id="header"></div>
+            <div id="header">
+                <div id="logoWrapper">
+                <img id="companyLogo" class="logo" src="Images/Logo/logo_NEU_blue.png">
+                    </div>
+            </div>
             
             <div id="body">
                 <div class = "sectionIntro">
                     <div id="introWrapper">
                         <div id="jumpIntro"></div>
-                        
                         <div id="intro">
-                            <img id="companyLogo" src="Images/Logo/logo_NEU_blue.png">
-
                             <div id="introText">
                                 Design with story and purpose.
                             </div>
-
                         </div>
                     </div>
                     
@@ -155,6 +155,52 @@
                     scrollTop: position
                 }, 500, 'linear' );
             });
+        </script>
+    
+        <script>
+            var maxHeight = $('#header').height();
+            $(function(){
+                $('#header').data('size','big');
+            });
+
+            $(window).scroll(function(){
+                if($(document).scrollTop() > 0)
+                {
+                    if($('#header').data('size') == 'big')
+                    {
+                        $('#header').css('z-index', 1);
+                        $('#companyLogo').css('height', '100%');
+                        $('#companyLogo').css('width', 'auto');
+                        $('#header').data('size','small');
+                        $('#header').stop().animate({
+                            height:'100px'
+                        },500);
+                    }
+                }
+                else
+                {
+                    if($('#header').data('size') == 'small')
+                    {
+                        $('#header').css('z-index', 0);
+                        $('#header').data('size','big');
+                        $('#header').stop().animate({
+                            height: maxHeight
+                        },  {
+                            duration: 500,
+                            complete: function () {
+                              $('#companyLogo').css('height', 'auto');
+                                $('#companyLogo').css('width', '100%');
+                            }
+                        });
+                    }  
+                }
+            });
+            
+            function resetLogo() {
+                $('#companyLogo').css('height', 'auto');
+                $('#companyLogo').css('width', '100%');
+            }
+            
         </script>
     </body>
 </html>

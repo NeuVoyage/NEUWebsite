@@ -5,7 +5,28 @@ html, body{
 }
 
 #header {
-   background:white;
+    position: fixed;
+    top:0;
+    left:0;
+    height: auto;
+    width: 100%;
+    background-color:white;
+    z-index: 0;
+}
+
+#logoWrapper {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+#companyLogo{
+    max-width: 720px;
+    max-height: 720px;
+    width: 100%;
+}
+
+.logo {
 }
 
 .sectionIntro {
@@ -25,13 +46,10 @@ html, body{
 }
 
 #intro {
-    max-width: 720px;
-    margin: auto auto auto auto;
-}
-
-#companyLogo{
-    max-width: 720px;
-    width: 100%
+    position: absolute;
+    width:100%;
+    top:50%;
+    text-align: center; 
 }
 
 #introText{
