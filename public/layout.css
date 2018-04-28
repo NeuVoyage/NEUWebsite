@@ -14,6 +14,48 @@ html, body{
     z-index: 2;
 }
 
+#socialWrapper {
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100px;
+    width: 100%;
+    z-index: 0;
+}
+
+#social {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto 0 auto;
+}
+
+#social img{
+    height:30px;
+    margin-top: 5px;
+}
+
+#youtube {
+    position: absolute;
+    left: 150px; 
+}
+
+#facebook {
+    position: absolute;
+    left: 250px;
+}
+
+#twitter {
+    position: absolute;
+    right: 250px;
+    
+}
+
+#github {
+    position: absolute;
+    right: 150px;
+    
+}
+
 #logoWrapper {
     height: 100%;
     width: 100%;
@@ -53,9 +95,9 @@ html, body{
     overflow: hidden;
     margin: 0 auto 0 auto;
     max-width: 720px;
-    width: 90%;
     list-style-type: none;
     text-align:center;
+    padding: 0px;
 }
 
 #navigation li {

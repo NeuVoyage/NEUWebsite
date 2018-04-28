@@ -31,7 +31,7 @@
                     </li>
                     
                     <li>
-                        <a href="#jumpProject">Project</a>
+                        <a href="#jumpProject">Projects</a>
                     </li>
                     
                     <li>
@@ -43,6 +43,26 @@
                     </li>
                 </ul>
             
+            </div>
+            
+            <div id="socialWrapper">
+                <div id="social">
+                    <a href="https://www.youtube.com/channel/UC1jtIwG--r1qUcvb1LfnDxg?view_as=subscriber" target="_blank" id="youtube">
+                        <img src="Images/Icons/youtube.png">
+                    </a>
+
+                    <a href="https://www.facebook.com/NeuVoyage/" target="_blank" id="facebook">
+                        <img src="Images/Icons/facebook.png">
+                    </a>
+
+                    <a href="https://twitter.com/NeuVoyage" target="_blank" id="twitter">
+                        <img src="Images/Icons/twitter.png">
+                    </a>
+
+                    <a href="https://github.com/NeuVoyage" target="_blank" id="github">
+                        <img src="Images/Icons/github.png">
+                    </a>
+                </div>
             </div>
             
             <div id="body">
@@ -225,7 +245,12 @@
                         
                         $('#header').stop().animate({
                             height:'100px'
-                        },500);
+                        },  {
+                            duration: 500,
+                            complete: function () {
+                                $('#socialWrapper').css('z-index', '3');
+                            }
+                        });
                         
                         $('#navHeader').stop().animate({
                             paddingTop:'100px'
@@ -241,6 +266,8 @@
                     if($('#header').data('size') == 'small')
                     {
                         $('#header').data('size','big');
+                        
+                        $('#socialWrapper').css('z-index', '0');
                         
                         $('#header').stop().animate({
                             height: maxHeight
