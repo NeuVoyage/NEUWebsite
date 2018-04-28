@@ -18,8 +18,31 @@
         <div class="container">
             <div id="header">
                 <div id="logoWrapper">
-                <img id="companyLogo" class="logo" src="Images/Logo/logo_NEU_blue.png">
-                    </div>
+                    <img id="companyLogo" class="logo" src="Images/Logo/logo_NEU_blue.png">
+                </div>
+            </div>
+            <div id="navHeader">
+                <div id="introText">
+                    Design with story and purpose.
+                </div>
+                <ul id="navigation">
+                    <li>
+                        <a href="#jumpMission">Mission</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#jumpProject">Project</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#jumpAbout">About</a>    
+                    </li>
+                    
+                    <li>
+                        <a href="#jumpSupport">Support</a>   
+                    </li>
+                </ul>
+            
             </div>
             
             <div id="body">
@@ -27,9 +50,7 @@
                     <div id="introWrapper">
                         <div id="jumpIntro"></div>
                         <div id="intro">
-                            <div id="introText">
-                                Design with story and purpose.
-                            </div>
+                            
                         </div>
                     </div>
                     
@@ -146,19 +167,30 @@
         </div>
     
         <script>
+            var lastId,topMenu = $("#navigation"),
+                topMenuHeight = topMenu.outerHeight() + 100,
+                // All list items
+                menuItems = topMenu.find("a"),
+                // Anchors corresponding to menu items
+                scrollItems = menuItems.map(function(){
+                  var item = $($(this).attr("href"));
+                  if (item.length) { return item; }
+                });
+
             $("a[href^='#']").click(function(e) {
                 e.preventDefault();
-
+                
                 var position = $($(this).attr("href")).offset().top;
 
                 $("body, html").animate({
                     scrollTop: position
                 }, 500, 'linear' );
             });
-        </script>
-    
-        <script>
+            
             var maxHeight = $('#header').height();
+            
+            $('#navHeader').css('padding-top', maxHeight);
+            
             $(function(){
                 $('#header').data('size','big');
             });
@@ -168,39 +200,70 @@
                 {
                     if($('#header').data('size') == 'big')
                     {
-                        $('#header').css('z-index', 1);
                         $('#companyLogo').css('height', '100%');
+                        
                         $('#companyLogo').css('width', 'auto');
+                        
                         $('#header').data('size','small');
+                        
                         $('#header').stop().animate({
                             height:'100px'
                         },500);
+                        
+                        $('#navHeader').stop().animate({
+                            paddingTop:'100px'
+                        }, 500);
+                        
+                        $('#introText').stop().animate({
+                            fontSize:'24px'
+                        }, 500);
                     }
                 }
                 else
                 {
                     if($('#header').data('size') == 'small')
                     {
-                        $('#header').css('z-index', 0);
                         $('#header').data('size','big');
+                        
                         $('#header').stop().animate({
                             height: maxHeight
                         },  {
                             duration: 500,
                             complete: function () {
-                              $('#companyLogo').css('height', 'auto');
+                                $('#companyLogo').css('height', 'auto');
                                 $('#companyLogo').css('width', '100%');
                             }
                         });
+                        
+                        $('#navHeader').stop().animate({
+                            paddingTop: maxHeight
+                        }, 500);
+                        
+                        $('#introText').stop().animate({
+                            fontSize:'42px'
+                        }, 500);
                     }  
                 }
+                
+                var fromTop = $(this).scrollTop()+topMenuHeight;
+   
+               // Get id of current scroll item
+               var cur = scrollItems.map(function(){
+                 if ($(this).offset().top < fromTop)
+                   return this;
+               });
+               // Get the id of the current element
+               cur = cur[cur.length-1];
+               var id = cur && cur.length ? cur[0].id : "";
+
+               if (lastId !== id) {
+                   lastId = id;
+                   // Set/remove active class
+                   menuItems
+                     .parent().removeClass("active")
+                     .end().filter("[href='#"+id+"']").parent().addClass("active");
+               }               
             });
-            
-            function resetLogo() {
-                $('#companyLogo').css('height', 'auto');
-                $('#companyLogo').css('width', '100%');
-            }
-            
         </script>
     </body>
 </html>
