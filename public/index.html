@@ -88,12 +88,7 @@
                         
                         <div id="mission">
                             <p>
-                                Every interaction we have with the world is influenced by design. Good design connects communities through intuitive function, story, and meaning. It’s time to put it to work. 
-                                
-                                <br><br>
-                                
-                                We explore new ways to connect people through sustainably designed visual narratives - whether in the form of brand identity systems or entertaining media.
-
+                                Our design house is all about clarity and sustainability, from branding to entertaing media.
                             </p> 
                         </div>
                     </div>
@@ -115,12 +110,12 @@
                                     <br> <br>
                                     
                                     NEU Tabletop Role-Playing Game System <br>
-                                    The keyword for this system is modular - and not just because the campaign is based around genetic modification. Simple and straightforward enough for complete beginners, and structured enough to provide challenges and complexity for advanced groups. A d20 and some friends are all you need to get started. Coming late 2018.
+                                    The keyword for this system is modular - and not just because the campaign is based around genetic modification. A d20 and some friends are all you need to get started. Coming late 2018.
 
                                     <br> <br>
                                     
                                     Neu Paris <br>
-                                    Lose yourself in a city where everyone can be anyone. It’s the year 2222, and genetic modification has most of humanity questioning just how far science is willing to go - at least, most of humanity outside of the U.S. capital, Neu Paris. This comedy noir series explores sides of the city that would make the RPG campaigns green with envy and red with blush as it follows an exotic dancer-turned-detective on the biggest case of her life.
+                                    Take a trip even deeper into Neu Paris, the capital of the U.S., in a comedy noir exploration of murder, intrigue, and what it means to be human in the year 2222.
 
                                 </p>  
                                 
@@ -140,7 +135,7 @@
                         <a name="about">
                             <div id="about">
                                 <p>
-                                    The Narrative Exploration Unit team is small but mighty. It’s a complementary marriage - literally! - of writing and visual art to user experience and programming, glued together with a passion for design and storytelling.
+                                    The Narrative Exploration Unit team is small but mighty. It’s a complementary marriage of writing and visual art to user experience and programming, glued together with a passion for design and storytelling.
 
                                     <br> <br>
                                     
@@ -172,7 +167,7 @@
                                     
                                     <br> <br>
 
-                                    If you just like us (and the work that we’re doing), feel free to send us a monetary gift via PayPal or set up a monthly contribution on Patreon. We totally like you back. <3
+                                    If you just like us <i>(and the work that we’re doing)</i>, feel free to send us a monetary gift via PayPal or set up a monthly contribution on Patreon. We totally like you back. <3
                                 </p>
 
                                 <br><br>
@@ -199,7 +194,7 @@
                     </div>
                 
                     <div id="footer">
-                        <p>&copy; 2018 Narrative Exploration Unit, Incorporated.</p> <p> contactus@neu.voyage</p>
+                        <p>&copy; 2018 Narrative Exploration Unit, Incorporated.</p>
                     </div>
                 </div>
             </div>
@@ -208,12 +203,11 @@
         <script>
             var lastId,topMenu = $("#navigation"),
                 topMenuHeight = topMenu.outerHeight() + 100,
-                // All list items
                 menuItems = topMenu.find("a"),
-                // Anchors corresponding to menu items
                 scrollItems = menuItems.map(function(){
-                  var item = $($(this).attr("href"));
-                  if (item.length) { return item; }
+                    var item = $($(this).attr("href"));
+                    if (item.length)
+                        return item;
                 });
 
             $("a[href^='#']").click(function(e) {
@@ -231,10 +225,31 @@
             $('#navHeader').css('padding-top', maxHeight);
 
             $(function(){
-                $('#header').data('size','big');
+                if($(document).scrollTop() > 0)
+                    {
+                        $('#header').data('size','small');
+                        
+                        $('#companyLogo').css('height', '100%');
+
+                        $('#companyLogo').css('width', 'auto');
+
+                        $('#header').data('size','small');
+
+                        $('#header').css('height', '100PX');
+                        
+                        $('#socialWrapper').css('z-index', '3');
+
+                        $('#navHeader').css('padding-top', '100px');
+
+                        $('#introText').css('font-size', '24px');
+                    } else 
+                    {
+                        $('#header').data('size','big');
+                    }
             });
             
-            if ($(window).width() > 720) {
+            if ($(window).width() > 720)
+            {
                 $(window).scroll(function(){
                     if($(document).scrollTop() > 0)
                     {
@@ -278,6 +293,7 @@
                                 duration: 500,
                                 complete: function () {
                                     $('#companyLogo').css('height', 'auto');
+                                    
                                     $('#companyLogo').css('width', '100%');
                                 }
                             });
@@ -293,22 +309,25 @@
                     }
                     
                     var fromTop = $(this).scrollTop()+topMenuHeight;
+                    
+                    var cur = scrollItems.map(function(){
+                    
+                        if ($(this).offset().top < fromTop)
+                            return this;
+                    });
+                   
+                    cur = cur[cur.length-1];
+                    
+                    var id = cur && cur.length ? cur[0].id : "";
 
-                   // Get id of current scroll item
-                   var cur = scrollItems.map(function(){
-                     if ($(this).offset().top < fromTop)
-                       return this;
-                   });
-                   // Get the id of the current element
-                   cur = cur[cur.length-1];
-                   var id = cur && cur.length ? cur[0].id : "";
-
-                   if (lastId !== id) {
-                       lastId = id;
-                       // Set/remove active class
-                       menuItems
-                         .parent().removeClass("active")
-                         .end().filter("[href='#"+id+"']").parent().addClass("active");
+                    if (lastId !== id) 
+                    {
+                        lastId = id;
+                       
+                        menuItems
+                            .parent().removeClass("active")
+                            .end().filter("[href='#"+id+"']")
+                            .parent().addClass("active");
                    }               
                 });
                 
@@ -316,21 +335,22 @@
                 $(window).scroll(function(){
                     var fromTop = $(this).scrollTop()+topMenuHeight;
 
-                   // Get id of current scroll item
-                   var cur = scrollItems.map(function(){
-                     if ($(this).offset().top < fromTop)
-                       return this;
-                   });
-                   // Get the id of the current element
+                    var cur = scrollItems.map(function(){
+                        if ($(this).offset().top < fromTop)
+                            return this;
+                    });
+                
                    cur = cur[cur.length-1];
                    var id = cur && cur.length ? cur[0].id : "";
 
-                   if (lastId !== id) {
-                       lastId = id;
-                       // Set/remove active class
-                       menuItems
-                         .parent().removeClass("active")
-                         .end().filter("[href='#"+id+"']").parent().addClass("active");
+                   if (lastId !== id) 
+                   {
+                        lastId = id;
+                       
+                        menuItems
+                            .parent().removeClass("active")
+                            .end().filter("[href='#"+id+"']")
+                            .parent().addClass("active");
                    }               
                 });
             }
