@@ -218,98 +218,122 @@
 
             $("a[href^='#']").click(function(e) {
                 e.preventDefault();
-                
+
                 var position = $($(this).attr("href")).offset().top;
 
                 $("body, html").animate({
                     scrollTop: position
                 }, 500, 'linear' );
             });
-            
+
             var maxHeight = $('#header').height();
-            
+
             $('#navHeader').css('padding-top', maxHeight);
-            
+
             $(function(){
                 $('#header').data('size','big');
             });
-
-            $(window).scroll(function(){
-                if($(document).scrollTop() > 0)
-                {
-                    if($('#header').data('size') == 'big')
+            
+            if ($(window).width() > 720) {
+                $(window).scroll(function(){
+                    if($(document).scrollTop() > 0)
                     {
-                        $('#companyLogo').css('height', '100%');
-                        
-                        $('#companyLogo').css('width', 'auto');
-                        
-                        $('#header').data('size','small');
-                        
-                        $('#header').stop().animate({
-                            height:'100px'
-                        },  {
-                            duration: 500,
-                            complete: function () {
-                                $('#socialWrapper').css('z-index', '3');
-                            }
-                        });
-                        
-                        $('#navHeader').stop().animate({
-                            paddingTop:'100px'
-                        }, 500);
-                        
-                        $('#introText').stop().animate({
-                            fontSize:'24px'
-                        }, 500);
+                        if($('#header').data('size') == 'big')
+                        {
+                            $('#companyLogo').css('height', '100%');
+
+                            $('#companyLogo').css('width', 'auto');
+
+                            $('#header').data('size','small');
+
+                            $('#header').stop().animate({
+                                height:'100px'
+                            },  {
+                                duration: 500,
+                                complete: function () {
+                                    $('#socialWrapper').css('z-index', '3');
+                                }
+                            });
+
+                            $('#navHeader').stop().animate({
+                                paddingTop:'100px'
+                            }, 500);
+
+                            $('#introText').stop().animate({
+                                fontSize:'24px'
+                            }, 500);
+                        }
                     }
-                }
-                else
-                {
-                    if($('#header').data('size') == 'small')
+                    else
                     {
-                        $('#header').data('size','big');
-                        
-                        $('#socialWrapper').css('z-index', '0');
-                        
-                        $('#header').stop().animate({
-                            height: maxHeight
-                        },  {
-                            duration: 500,
-                            complete: function () {
-                                $('#companyLogo').css('height', 'auto');
-                                $('#companyLogo').css('width', '100%');
-                            }
-                        });
-                        
-                        $('#navHeader').stop().animate({
-                            paddingTop: maxHeight
-                        }, 500);
-                        
-                        $('#introText').stop().animate({
-                            fontSize:'42px'
-                        }, 500);
-                    }  
-                }
-                
-                var fromTop = $(this).scrollTop()+topMenuHeight;
-   
-               // Get id of current scroll item
-               var cur = scrollItems.map(function(){
-                 if ($(this).offset().top < fromTop)
-                   return this;
-               });
-               // Get the id of the current element
-               cur = cur[cur.length-1];
-               var id = cur && cur.length ? cur[0].id : "";
+                        if($('#header').data('size') == 'small')
+                        {
+                            $('#header').data('size','big');
 
-               if (lastId !== id) {
-                   lastId = id;
-                   // Set/remove active class
-                   menuItems
-                     .parent().removeClass("active")
-                     .end().filter("[href='#"+id+"']").parent().addClass("active");
-               }               
-            });
+                            $('#socialWrapper').css('z-index', '0');
+
+                            $('#header').stop().animate({
+                                height: maxHeight
+                            },  {
+                                duration: 500,
+                                complete: function () {
+                                    $('#companyLogo').css('height', 'auto');
+                                    $('#companyLogo').css('width', '100%');
+                                }
+                            });
+
+                            $('#navHeader').stop().animate({
+                                paddingTop: maxHeight
+                            }, 500);
+
+                            $('#introText').stop().animate({
+                                fontSize:'42px'
+                            }, 500);
+                        }  
+                    }
+                    
+                    var fromTop = $(this).scrollTop()+topMenuHeight;
+
+                   // Get id of current scroll item
+                   var cur = scrollItems.map(function(){
+                     if ($(this).offset().top < fromTop)
+                       return this;
+                   });
+                   // Get the id of the current element
+                   cur = cur[cur.length-1];
+                   var id = cur && cur.length ? cur[0].id : "";
+
+                   if (lastId !== id) {
+                       lastId = id;
+                       // Set/remove active class
+                       menuItems
+                         .parent().removeClass("active")
+                         .end().filter("[href='#"+id+"']").parent().addClass("active");
+                   }               
+                });
+                
+            } else {
+                $(window).scroll(function(){
+                    var fromTop = $(this).scrollTop()+topMenuHeight;
+
+                   // Get id of current scroll item
+                   var cur = scrollItems.map(function(){
+                     if ($(this).offset().top < fromTop)
+                       return this;
+                   });
+                   // Get the id of the current element
+                   cur = cur[cur.length-1];
+                   var id = cur && cur.length ? cur[0].id : "";
+
+                   if (lastId !== id) {
+                       lastId = id;
+                       // Set/remove active class
+                       menuItems
+                         .parent().removeClass("active")
+                         .end().filter("[href='#"+id+"']").parent().addClass("active");
+                   }               
+                });
+            }
         </script>
     </body>
 </html>
